@@ -5,8 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/* static char *font = "dina ttf 10px:pixelsize=16:antialias=true:autohint=true"; */
-static char *font = "dina ttf 10px:pixelsize=16:antialias=true:autohint=true";
+static char *font = "dina ttf 10px:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 12;
 
 /*
@@ -44,7 +43,7 @@ int allowaltscreen = 1;
 
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 120;
-static unsigned int actionfps = 60;
+static unsigned int actionfps = 30;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -84,48 +83,32 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"#5c616c",
-	"#e1485a",
-	"#35ac54",
-	"#ef654a",
-	"#5294e2",
-	"#c81a71",
-	"#1ba39c",
-	"#353945",
-
-	/* 8 bright colors */
-	"#5c616c",
-	"#e1485a",
-	"#35ac54",
-	"#ef654a",
-	"#5294e2",
-	"#c81a71",
-	"#1ba39c",
-	"#353945",
-
-	[255] = 0,
-
-	/* more colors can be added after 255 to use with DefaultXX */
-	"black",
-	"#676c76",
-	"#676c76",
+  "#f2e5bc", /* base00 */
+  "#9d0006", /* base08 */
+  "#79740e", /* base0B */
+  "#b57614", /* base0A */
+  "#076678", /* base0D */
+  "#8f3f71", /* base0E */
+  "#427b58", /* base0C */
+  "#9d0006", /* base08 */
+  "#bdae93", /* base03 */
+  "#af3a03", /* base09 */
+  "#d65d0e", /* base0F */
+  "#d65d0e", /* base0F */
+  "#665c54", /* base04 */
+  "#3c3836", /* base06 */
+  "#d65d0e", /* base0F */
+  "#282828", /* base07 */
 };
 
-
-/*
- * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
- */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-static unsigned int defaultcs = 258;
+unsigned int defaultfg = 7;
+unsigned int defaultbg = 0;
+static unsigned int defaultcs = 13;
 static unsigned int defaultrcs = 0;
-
 /*
  * Default shape of cursor
  * 2: Block ("█")
