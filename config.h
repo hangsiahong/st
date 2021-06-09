@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "dina ttf 10px:pixelsize=24:antialias=true:autohint=true";
+static char *font = "dina ttf 10px:pixelsize=34:antialias=true:autohint=true";
 static int borderpx = 12;
 
 /*
@@ -87,22 +87,24 @@ float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#f2e5bc", /* base00 */
-  "#9d0006", /* base08 */
-  "#79740e", /* base0B */
-  "#b57614", /* base0A */
-  "#076678", /* base0D */
-  "#8f3f71", /* base0E */
-  "#427b58", /* base0C */
-  "#9d0006", /* base08 */
-  "#bdae93", /* base03 */
-  "#af3a03", /* base09 */
-  "#d65d0e", /* base0F */
-  "#d65d0e", /* base0F */
-  "#665c54", /* base04 */
-  "#3c3836", /* base06 */
-  "#d65d0e", /* base0F */
-  "#282828", /* base07 */
+  "#090300", /* base00 */
+  "#db2d20", /* base08 */
+  "#01a252", /* base0B */
+  "#fded02", /* base0A */
+  "#01a0e4", /* base0D */
+  "#a16a94", /* base0E */
+  "#b5e4f4", /* base0C */
+  "#a5a2a2", /* base05 */
+  "#5c5855", /* base03 */
+  "#e8bbd0", /* base09 */
+  /* "#3a3432", /1* base01 *1/ */
+  "#f7f7f7", /* base01 */
+  "#4a4543", /* base02 */
+  /* "#807d7c", /1* base04 *1/ */
+  "#01a252", /* base0B */
+  "#d6d5d4", /* base06 */
+  "#cdab53", /* base0F */
+  "#f7f7f7", /* base07 */
 };
 
 unsigned int defaultfg = 7;
