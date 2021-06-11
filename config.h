@@ -43,7 +43,7 @@ int allowaltscreen = 1;
 
 /* frames per second st should at maximum draw to the screen */
 static unsigned int xfps = 120;
-static unsigned int actionfps = 30;
+static unsigned int actionfps = 60;
 
 /*
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
@@ -83,18 +83,20 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.9;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
   "#090300", /* base00 */
   "#db2d20", /* base08 */
   "#01a252", /* base0B */
+  /* "#01a0e1", /1* base0D *1/ */
   "#fded02", /* base0A */
   "#01a0e4", /* base0D */
   "#a16a94", /* base0E */
   "#b5e4f4", /* base0C */
-  "#a5a2a2", /* base05 */
+  /* "#a5a2a2", /1* base05 *1/ */
+  "#f7f7f7", /* base01 */
   "#5c5855", /* base03 */
   "#e8bbd0", /* base09 */
   /* "#3a3432", /1* base01 *1/ */
@@ -102,9 +104,11 @@ static const char *colorname[] = {
   "#4a4543", /* base02 */
   /* "#807d7c", /1* base04 *1/ */
   "#01a252", /* base0B */
-  "#d6d5d4", /* base06 */
+  /* "#d6d5d4", /1* base06 *1/ */
+  "#fabd2f", /* base06 */
   "#cdab53", /* base0F */
-  "#f7f7f7", /* base07 */
+  /* "#f7f7f7", /1* base07 *1/ */
+  "#ebdbb2", /* base07 */
 };
 
 unsigned int defaultfg = 7;
