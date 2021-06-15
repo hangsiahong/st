@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "dina ttf 10px:pixelsize=22:antialias=true:autohint=true";
+static char *font = "dina ttf 10px:pixelsize=30:antialias=true:autohint=true";
 static int borderpx = 12;
 
 /*
@@ -83,13 +83,13 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
   "#090300", /* base00 */
   "#db2d20", /* base08 */
-  "#01a252", /* base0B */
+  "#9ED0E6", /* base0B */
   /* "#01a0e1", /1* base0D *1/ */
   "#fded02", /* base0A */
   "#01a0e4", /* base0D */
@@ -103,7 +103,7 @@ static const char *colorname[] = {
   "#f7f7f7", /* base01 */
   "#4a4543", /* base02 */
   /* "#807d7c", /1* base04 *1/ */
-  "#01a252", /* base0B */
+  "#30638E", /* base0B */
   /* "#d6d5d4", /1* base06 *1/ */
   "#fabd2f", /* base06 */
   "#cdab53", /* base0F */
