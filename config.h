@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 /* static char *font = "dina ttf 10px:pixelsize=17:antialias=true:autohint=true"; */
-static char *font = "gohufont-14:pixelsize=17:antialias=true:autohint=true";
+static char *font = "monospace-:pixelsize=17:antialias=true:autohint=true";
 /* static char *font = "Monospace:pixelsize=12:antialias=true:autohint=true"; */
 static int borderpx = 16;
 
@@ -89,33 +89,92 @@ float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#090300", /* base00 */
-  "#db2d20", /* base08 */
-  "#9ED0E6", /* base0B */
-  /* "#01a0e1", /1* base0D *1/ */
-  "#fded02", /* base0A */
-  "#01a0e4", /* base0D */
-  "#a16a94", /* base0E */
-  "#b5e4f4", /* base0C */
-  /* "#a5a2a2", /1* base05 *1/ */
-  "#f7f7f7", /* base01 */
-  "#5c5855", /* base03 */
-  "#e8bbd0", /* base09 */
-  /* "#3a3432", /1* base01 *1/ */
-  "#f7f7f7", /* base01 */
-  "#4a4543", /* base02 */
-  /* "#807d7c", /1* base04 *1/ */
-  "#01a0e1", /* base0B */
-  /* "#d6d5d4", /1* base06 *1/ */
-  "#fabd2f", /* base06 */
-  "#cdab53", /* base0F */
-  /* "#f7f7f7", /1* base07 *1/ */
-  "#ebdbb2", /* base07 */
+    "#4f4858",
+    "#cc6666",
+    "#b5bd68",
+    "#e4b226",
+    "#4457a3",
+    "#903a62",
+    "#7aa1dc",
+    "#c4b7c5",
+    "#545d67",
+    "#c16772",
+    "#afda6e",
+    "#ebcf1a",
+    "#4880a5",
+    "#9568a1",
+    "#abbcda",
+    "#ffeefc",
+
+    /* "#1d1f21", */
+    /* "#cc6666", */
+    /* "#b5bd68", */
+    /* "#f0c674", */
+    /* "#81a2be", */
+    /* "#b294bb", */
+    /* "#8abeb7", */
+    /* "#c5c8c6", */
+    /* "#969896", */
+    /* "#de935f", */
+    /* "#afda6e", */
+    /* "#4880a5", */
+    /* "#b4b7b4", */
+    /* "#e0e0e0", */
+    /* "#a3685a", */
+    /* "#ffffff", */
+    [255] = 0,
+
+    /* more colors can be added after 255 to use with DefaultXX */
+    "#1d1f21", /* background */
+    "#c5c8c6", /* foreground */
+    "#ff99f6", /* cursor */
 };
 
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 13;
+/* Terminal colors for alternate (light) palette */
+static const char *altcolorname[] = {
+    "#fdf4c1",
+    "#928374",
+    "#cc241d",
+    "#9d0006",
+    "#98971a",
+    "#79740e",
+    "#d79921",
+    "#b57614",
+    "#458588",
+    "#076678",
+    "#b16286",
+    "#8f3f71",
+    "#689d6a",
+    "#427b58",
+    "#7c6f64",
+    "#3c3836",
+    /* "#ffffff", */
+    /* "#c82829", */
+    /* "#718c00", */
+    /* "#eab700", */
+    /* "#4271ae", */
+    /* "#8959a8", */
+    /* "#3e999f", */
+    /* "#4d4d4c", */
+    /* "#8e908c", */
+    /* "#f5871f", */
+    /* "#759348", */
+    /* "#4880a5", */
+    /* "#969896", */
+    /* "#282a2e", */
+    /* "#a3685a", */
+    /* "#1d1f21", */
+    [255] = 0,
+
+    /* more colors can be added after 255 to use with DefaultXX */
+    "#fbf1f7", /* background */
+    "#3c3836", /* foreground */
+    "#a8259d", /* cursor */
+};
+
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 258;
 static unsigned int defaultrcs = 0;
 /*
  * Default shape of cursor
