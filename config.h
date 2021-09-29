@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 /* static char *font = "dina ttf 10px:pixelsize=17:antialias=true:autohint=true"; */
-static char *font = "monospace-:pixelsize=17:antialias=true:autohint=true";
+static char *font = "Monospace-:pixelsize=17:antialias=true:autohint=true";
 /* static char *font = "Monospace:pixelsize=12:antialias=true:autohint=true"; */
 static int borderpx = 16;
 
