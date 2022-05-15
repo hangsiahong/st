@@ -5,7 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Code New Roman:pixelsize=12:antialias=true:autohint=true";
+/* static char *font = "SF-Mono-Medium:pixelsize=14:antialias=false:autohint=true"; */
+/* static char *font = "Hack:pixelsize=14:antialias=true:autohint=true"; */
+static char *font = "Time New Roman:pixelsize=14:antialias=false:autohint=true";
 static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
@@ -27,8 +29,8 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
-static float chscale = 1.0;
+static float cwscale = 1.1;
+static float chscale = 1.1;
 
 /*
  * word delimiter string
@@ -87,7 +89,8 @@ const int boxdraw_braille = 0;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+// char *termname = "st-256color";
+char *termname = "tmux-256color";
 
 /*
  * spaces per tab
@@ -115,20 +118,20 @@ float alphaUnfocus;
 static const char *colorname[] = {
 	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
 	"#cc241d",
-/*	"#98971a",*/
-	"#6641fa",/* Purple color */
-	"#d79921",
-/*	"#458588", comment color */
-	"#339e28",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
+/*	"#fabd2f",*/
+	"#fcfafa",/* Purple color */
+	"#ed3edc",
+/*	"#6fecf2", comment color */
+	"#ed3edc",
+	"#9b6bfa",
+	"#caf04f",
+	"#fabd2f",
+	"#fabd2f",
 	"#fb4934",
 	"#b8bb26",
 	"#fabd2f",
-	"#83a598",
-	"#d3869b",
+	"#fcfafa",
+	"#6fecf2",
 	"#8ec07c",
 	"#ebdbb2",
 	[255] = 0,
@@ -137,7 +140,7 @@ static const char *colorname[] = {
 	"#555555", /* 257 -> rev cursor*/
 	"#1a1515",
 /*	"#282828", /* 258 -> bg */
-	"#ebdbb2", /* 259 -> fg */
+	"#94abff", /* 259 -> fg */
 };
 
 
