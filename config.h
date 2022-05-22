@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/* static char *font = "SF-Mono-Medium:pixelsize=14:antialias=false:autohint=true"; */
-/* static char *font = "Hack:pixelsize=14:antialias=true:autohint=true"; */
+/* static char *font = "CaskaydiaCove Nerd Font-Regular:pixelsize=14:antialias=false:autohint=true"; */
+/* static char *font = "SF Mono Regular:pixelsize=14:antialias=true:autohint=true"; */
 static char *font = "Time New Roman:pixelsize=14:antialias=false:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+static char *font2[] = { "SF Mono Regular:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 /*
@@ -29,8 +29,8 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.1;
-static float chscale = 1.1;
+static float cwscale = 0.9;
+static float chscale = 0.9;
 
 /*
  * word delimiter string
@@ -56,7 +56,7 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 8;
+static double minlatency = 3;
 static double maxlatency = 33;
 
 /*
@@ -167,8 +167,9 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 80;
-static unsigned int rows = 24;
+/* 80 */
+static unsigned int cols = 100;
+static unsigned int rows = 28;
 
 /*
  * Default colour and shape of the mouse cursor
