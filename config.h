@@ -5,12 +5,23 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/* static char *font = "CaskaydiaCove Nerd Font-Regular:pixelsize=14:antialias=false:autohint=true"; */
-/* static char *font = "SF Mono Regular:pixelsize=14:antialias=true:autohint=true"; */
-static char *font = "Time New Roman:pixelsize=14:antialias=false:autohint=true";
-static char *font2[] = { "SF Mono Regular:pixelsize=10:antialias=true:autohint=true" };
+/* static char *font = "SFMono Nerd Font Mono:pixelsize=18:antialias=true:autohint=true"; */
+/* static char *font = "Classic Console Neue:pixelsize=40:antialias=true:autohint=true"; */
+/* static char *font2[] = { "Classic Console Neue=14:antialias=true:autohint=true" }; */
+/* static int borderpx = 2; */
+
+
+static char *font = "Code New Roman:style=Bold:pixelsize=30:antialias=false:autohint=true";
+static char *font2[] = { "Code New Roman=14:style=Bold:antialias=false:autohint=true" };
 static int borderpx = 2;
 
+/* static char *font = "SF Mono Nerd Font Mono:style=bold:pixelsize=30:antialias=true:autohint=true"; */
+/* static char *font2[] = { "SF Mono Nerd Font Mono=14:style=bold:antialias=true:autohint=true" }; */
+/* static int borderpx = 2; */
+
+/* static char *font = "SF Mono:style=Bold:pixelsize=30:antialias=true:autohint=true"; */
+/* static char *font2[] = { "SF Mono=14:style=Bold:antialias=true:autohint=true" }; */
+/* static int borderpx = 2; */
 /*
  * What program is execed by st depends of these precedence rules:
  * 1: program passed with -e
@@ -29,8 +40,13 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 0.9;
-static float chscale = 0.9;
+static float cwscale = 1.0;
+static float chscale = 1.0;
+
+
+/* frames per second st should at maximum draw to the screen */
+static unsigned int xfps = 120;
+static unsigned int actionfps = 60;
 
 /*
  * word delimiter string
@@ -56,7 +72,7 @@ int allowwindowops = 0;
  * near minlatency, but it waits longer for slow updates to avoid partial draw.
  * low minlatency will tear/flicker more, as it can "detect" idle too early.
  */
-static double minlatency = 3;
+static double minlatency = 8;
 static double maxlatency = 33;
 
 /*
@@ -77,10 +93,10 @@ static unsigned int cursorthickness = 2;
  * 0: disable (render all U25XX glyphs normally from the font).
  */
 const int boxdraw = 1;
-const int boxdraw_bold = 0;
+const int boxdraw_bold = 1;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 0;
+const int boxdraw_braille = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -89,8 +105,7 @@ const int boxdraw_braille = 0;
 static int bellvolume = 0;
 
 /* default TERM value */
-// char *termname = "st-256color";
-char *termname = "tmux-256color";
+char *termname = "st-256color";
 
 /*
  * spaces per tab
@@ -116,31 +131,32 @@ float alphaUnfocus;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-/*	"#fabd2f",*/
-	"#fcfafa",/* Purple color */
-	"#ed3edc",
-/*	"#6fecf2", comment color */
-	"#ed3edc",
-	"#9b6bfa",
-	"#caf04f",
-	"#fabd2f",
-	"#fabd2f",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#fcfafa",
-	"#6fecf2",
-	"#8ec07c",
-	"#ebdbb2",
+	/* 8 normal colors */
+	"#5c616c",
+	"#e1485a",
+	"#35ac54",
+	"#ef654a",
+	"#5294e2",
+	"#c81a71",
+	"#1ba39c",
+	"#353945",
+
+	/* 8 bright colors */
+	"#5c616c",
+	"#e1485a",
+	"#35ac54",
+	"#ef654a",
+	"#5294e2",
+	"#c81a71",
+	"#1ba39c",
+	"#353945",
+
 	[255] = 0,
+
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#add8e6", /* 256 -> cursor */
-	"#555555", /* 257 -> rev cursor*/
-	"#1a1515",
-/*	"#282828", /* 258 -> bg */
-	"#94abff", /* 259 -> fg */
+	"black",
+	"#676c76",
+	"#676c76",
 };
 
 
@@ -148,11 +164,12 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 259;
-unsigned int defaultbg = 258;
-unsigned int defaultcs = 256;
-unsigned int defaultrcs = 257;
-unsigned int background = 258;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 258;
+static unsigned int defaultrcs = 0;
+/* unsigned int background = 258; */
+
 
 /*
  * Default shape of cursor
@@ -167,14 +184,14 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-/* 80 */
-static unsigned int cols = 100;
-static unsigned int rows = 28;
+static unsigned int cols = 80;
+static unsigned int rows = 24;
 
 /*
  * Default colour and shape of the mouse cursor
  */
-static unsigned int mouseshape = XC_xterm;
+/* static unsigned int mouseshape = XC_xterm; */
+static unsigned int mouseshape = XC_left_ptr;
 static unsigned int mousefg = 7;
 static unsigned int mousebg = 0;
 
