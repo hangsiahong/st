@@ -23,8 +23,8 @@
 // static char *font = "PxPlus ToshibaTxL2 8x16:pixelsize=60:antialias=true:autohint=true";
 
 // static char *font = "Ac437 MBytePC230 CGA:pixelsize=50:antialias=true:autohint=true";
-static char *font = "Fira Code Retina:pixelsize=50:antialias=true:autohint=true";
-static char *font2[] = { "Fira Code Retina=14:style=Bold:antialias=false:autohint=true" };
+static char *font = "MartianMono Nerd Font:pixelsize=14:antialias=true:autohint=true";
+static char *font2[] = { "MartianMono Nerd Font:pixelsize=14:antialias=true:autohint=true" };
 static int borderpx = 2;
 
 

@@ -1744,7 +1744,7 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og, Line line, int le
 				break;
 			/* FALLTHROUGH */
 		case 8: /* steady st cursor */
-			g.u = xsetcursor;
+			/* g.u = xsetcursor; */
 			xdrawglyph(g, cx, cy);
 			break;
 		}
